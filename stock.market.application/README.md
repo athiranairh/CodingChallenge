@@ -32,20 +32,20 @@ App runnning Location: http://localhost:8080
 
 The following APIs are available:
 
-GET /api/V1/dataSets/{Id}
+GET /api/V1/datasets/{Id}
 
-GET /api/V1/allDataSets?search=(stock:'<searchString>')
+GET /api/V1/datasets/all?search=(stock:'<searchString>')
 
-POST /api/V1/dataSet/
+POST /api/V1/datasets/
 
-POST /api/V1/allDataSets/
+POST /api/V1/datasets/all/
 
-POST /api/V1/allDataSetsFromCSV/?file
-
-
+POST /api/V1/datasets/allFromCSV/?file
 
 
-Test data in csv format and sample REST commands are available inside sample data folder
+
+
+Test data in csv format and sample REST commands are available inside stock.market.application\src\test\resources folder
 
 
 

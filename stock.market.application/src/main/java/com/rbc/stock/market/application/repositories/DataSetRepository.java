@@ -8,5 +8,5 @@ import com.rbc.stock.market.application.models.DataSet;
 
 @Repository
 public interface DataSetRepository extends CrudRepository<DataSet, Long>, JpaSpecificationExecutor<DataSet>{
-
+	
 }

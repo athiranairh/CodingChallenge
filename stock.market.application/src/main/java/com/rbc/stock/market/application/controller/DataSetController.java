@@ -32,7 +32,10 @@ import com.sipios.springsearch.anotation.SearchSpec;
  * Specific defined error codes can be returned for each error scenario from all APIs which lets the
  * client understand the exact error and they can handle exceptions effectively
  * 
- * in order to avoid any concurrent access anomalies, optimistic locking with
+ * For the current requirement, since we have only POST (adds new entries in DB) and GET method (gets info from DB), 
+ * there shouldn't be any concurrent access issues.
+ * 
+ * in order to avoid any concurrent access anomalies in future (may be by the introduction of a PUT method), optimistic locking with
  * the help of JPA @Version is implemented
  * 
  * in the GET request, an ETag is returned in the response header indicating the
@@ -50,7 +53,9 @@ public class DataSetController {
 	DataSetService dataSetService;
 
 	/*
-	 * API to get data sets according to the passed Id
+	 * 
+	 * If the client wants to get the details of a dataset that was created earlier, this API can be used.
+	 * It accepts a path variable - Id (this Id was returned to the client when the data set was created earlier)
 	 * 
 	 * operation: GET Accepts search criteria Id as a path variable returns 200 OK
 	 * and the object as success response 404, not returned in failure scenarios
@@ -189,6 +194,12 @@ public class DataSetController {
 	 * 
 	 * the needed view can be accepted a path variable and processed accordingly
 	 * 
+	 * Here in order to make the search fast, stock column in the table needs to be indexed. 
+	 * 
+	 *  Also, to use a built in method, I have used a generalized way of querying the DB.
+	 *  
+	 *  Instead of that a custom JPA method can be designed to invoke the DB to get all records based on stock ticker (indexed field)
+	 * 
 	 */
 	@GetMapping("/all")
 	public ResponseEntity<List<DataSet>> getDataSetsWithSpecificStockTicker(@SearchSpec Specification<DataSet> specs) {
@@ -199,5 +210,5 @@ public class DataSetController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		}
 	}
-
+	
 }
