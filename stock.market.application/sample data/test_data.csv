@@ -1,0 +1,8 @@
+Id,quarter,stock,date,open,high,low,close,volume,percent_change_price,percent_chagne_volume_over_last_week,previous_weeks_volume,next_weeks_open,next_weeks_close,percent_change_next_weeks_price,days_to_next_dividend,percent_return_next_dividend
+1,1,RBC,1/1/2021,120,300,50,120,20,10,20,5,130,130,10,5,10
+2,1,ABC,1/1/2020,120,300,50,120,20,10,20,5,130,130,10,5,10
+3,1,GHJ,1/12/2020,120,300,50,120,20,10,20,5,130,130,10,5,10
+4,1,JKUY,1/1/2021,120,300,50,120,20,10,20,5,130,130,10,5,10
+5,1,VBHTY,1/4/2020,120,300,50,120,20,10,20,5,130,130,10,5,10
+6,1,RBC,1/1/2020,120,300,50,120,20,23,20,5,130,130,10,5,10
+7,1,RBC,1/1/2021,120,300,50,120,20,10,20,5,130,130,10,5,10

@@ -1,0 +1,96 @@
+GET http://localhost:8080/api/dataSet/dataSets/31
+
+GET http://localhost:8080/api/dataSet/allDataSets?search=(stock:'RBC')
+
+POST http://localhost:8080/api/dataSet/dataSet/
+
+request body:
+
+{
+    "id" : 30,
+    "quarter":"1",
+    "stock":"RBC1",
+    "date":"2021-10-21",
+    "open":"gythu",
+    "high":"fgyh",
+    "low":"njhui",
+    "close":"nbhgy",
+    "volume":"nbh",
+    "percent_change_price":"jnb",
+    "percent_chagne_volume_over_last_week":"hj",
+    "previous_weeks_volume":"67",
+    "next_weeks_open":"4",
+    "next_weeks_close":"20",
+    "percent_change_next_weeks_price":"30",
+    "days_to_next_dividend":"20",
+    "percent_return_next_dividend":"10"
+}
+
+POST http://localhost:8080/api/dataSet/allDataSets/
+
+request body: 
+
+[
+{
+    "id":"30",
+    "quarter":"1",
+    "stock":"RBC",
+    "date":"2021-10-21",
+    "open":"gythu",
+    "high":"fgyh",
+    "low":"njhui",
+    "close":"nbhgy",
+    "volume":"nbh",
+    "percent_change_price":"jnb",
+    "percent_chagne_volume_over_last_week":"hj",
+    "previous_weeks_volume":"67",
+    "next_weeks_open":"4",
+    "next_weeks_close":"20",
+    "percent_change_next_weeks_price":"30",
+    "days_to_next_dividend":"20",
+    "percent_return_next_dividend":"10"
+},
+{
+    "id":"31",
+    "quarter":"3",
+    "stock":"RBC",
+    "date":"2021-10-21",
+    "open":"gythu",
+    "high":"fgyh",
+    "low":"njhui",
+    "close":"nbhgy",
+    "volume":"nbh",
+    "percent_change_price":"jnb",
+    "percent_chagne_volume_over_last_week":"hj",
+    "previous_weeks_volume":"67",
+    "next_weeks_open":"4",
+    "next_weeks_close":"20",
+    "percent_change_next_weeks_price":"30",
+    "days_to_next_dividend":"20",
+    "percent_return_next_dividend":"10"
+},
+{
+    "id":"32",
+    "quarter":"2",
+    "stock":"RBC",
+    "date":"2021-10-21",
+    "open":"gythu",
+    "high":"fgyh",
+    "low":"njhui",
+    "close":"nbhgy",
+    "volume":"nbh",
+    "percent_change_price":"jnb",
+    "percent_chagne_volume_over_last_week":"hj",
+    "previous_weeks_volume":"67",
+    "next_weeks_open":"4",
+    "next_weeks_close":"20",
+    "percent_change_next_weeks_price":"30",
+    "days_to_next_dividend":"20",
+    "percent_return_next_dividend":"10"
+}
+]
+
+
+POST http://localhost:8080/api/dataSet/allDataSetsFromCSV/?file
+
+pass csv file
