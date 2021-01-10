@@ -23,7 +23,7 @@ import com.sipios.springsearch.anotation.SearchSpec;
 
 @RestController()
 
-@RequestMapping("/api/V1")
+@RequestMapping("/api/V1/datasets")
 
 /*
  * more EXCEPTION handling code needs to be added to the below APIs to handle
@@ -57,7 +57,7 @@ public class DataSetController {
 	 * (more to be added as stated above)
 	 * 
 	 */
-	@GetMapping("/dataSets/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<DataSet> getDataSets(@PathVariable Long id) {
 		DataSet dataSet = dataSetService.getDataSets(id);
 		if (null != dataSet) {
@@ -93,7 +93,7 @@ public class DataSetController {
 	 * writing etc.
 	 * 
 	 */
-	@PostMapping("/dataSet/")
+	@PostMapping("/")
 	public ResponseEntity<ResponseMessage> addDataSet(@RequestBody DataSet dataSet) {
 		if (null != dataSet) {
 			dataSetService.createDataSet(dataSet);
@@ -119,7 +119,7 @@ public class DataSetController {
 	 * 
 	 * 
 	 */
-	@PostMapping("/allDataSets/")
+	@PostMapping("/all")
 	public ResponseEntity<ResponseMessage> addAllDataSets(@RequestBody Iterable<DataSet> dataSets) {
 		if (null != dataSets) {
 			dataSetService.saveAllDataSets(dataSets);
@@ -147,7 +147,7 @@ public class DataSetController {
 	 * Max size of the CSV file is configured as 2MB (in application.properties)
 	 * 
 	 */
-	@PostMapping("/allDataSetsFromCSV")
+	@PostMapping("/allFromCSV")
 	public ResponseEntity<ResponseMessage> addAllDataSetsFromCSV(@RequestParam("file") MultipartFile file) {
 		if (CommonUtil.hasCsvFormat(file)) {
 			try {
@@ -190,7 +190,7 @@ public class DataSetController {
 	 * the needed view can be accepted a path variable and processed accordingly
 	 * 
 	 */
-	@GetMapping("/allDataSets")
+	@GetMapping("/all")
 	public ResponseEntity<List<DataSet>> getDataSetsWithSpecificStockTicker(@SearchSpec Specification<DataSet> specs) {
 		List<DataSet> dataSets = dataSetService.getAllDataSets(specs);
 		if (null != dataSets) {

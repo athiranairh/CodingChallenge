@@ -1,8 +1,8 @@
-GET http://localhost:8080/api/V1/dataSets/31
+GET http://localhost:8080/api/V1/datasets/1
 
-GET http://localhost:8080/api/V1/allDataSets?search=(stock:'RBC')
+GET http://localhost:8080/api/V1/datasets/all?search=(stock:'RBC')
 
-POST http://localhost:8080/api/V1/dataSet/
+POST http://localhost:8080/api/V1/datasets/
 
 request body:
 
@@ -26,7 +26,7 @@ request body:
     "percent_return_next_dividend":"10"
 }
 
-POST http://localhost:8080/api/V1/allDataSets/
+POST http://localhost:8080/api/V1/datasets/all/
 
 request body: 
 
@@ -91,6 +91,6 @@ request body:
 ]
 
 
-POST http://localhost:8080/api/V1/allDataSetsFromCSV/?file
+POST http://localhost:8080/api/V1/datasets/allFromCSV/?file
 
 pass csv file
