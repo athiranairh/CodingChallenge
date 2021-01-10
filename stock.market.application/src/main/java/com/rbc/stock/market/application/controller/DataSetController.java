@@ -65,13 +65,14 @@ public class DataSetController {
 			 * sample eTag value looks like >> "87687686788" here full dataSet is returned
 			 * to the client.
 			 * 
-			 * we can modify this API to provide two different views in the future: Identity
-			 * view and detailed view
+			 * we can modify this API to provide two different views in the future: 
+			 * Identity view and detailed view. this will help to reduce the pay-load traffic by not sending unnecessary info back to the client
 			 * 
-			 * Identity view will return only some specific fields from the dataSet to the
-			 * client
+			 * Identity view will return only some specific fields from the dataSet to the client
 			 * 
 			 * detailed view will return the entire object like now
+			 * 
+			 * the needed view can be accepted a path variable and processed accordingly 
 			 * 
 			 */
 
@@ -174,16 +175,19 @@ public class DataSetController {
 	 * 
 	 * This API can be modified
 	 * 
-	 * >>> to return the response a CSV file for more easiness to handle the data in future 
-	 * >>> include Etag header in the response that can be used for optimistic locking
+	 * >>> to return the response a CSV file for more easiness to handle the data in
+	 * future >>> include Etag header in the response that can be used for
+	 * optimistic locking
 	 * 
-	 * we can modify this API to provide two different views in the future: Identity
-	 * view and detailed view
+	 * we can modify this API to provide two different views in the future: 
+	 * Identity view and detailed view. this will help to reduce the pay-load traffic by not
+	 * sending unnecessary info back to the client
 	 * 
-	 * Identity view will return only some specific fields from the dataSet to the
-	 * client
+	 * Identity view will return only some specific fields from the dataSet to the client
 	 * 
 	 * detailed view will return the entire object like now
+	 * 
+	 * the needed view can be accepted a path variable and processed accordingly
 	 * 
 	 */
 	@GetMapping("/allDataSets")
