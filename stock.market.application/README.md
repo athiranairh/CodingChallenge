@@ -45,9 +45,6 @@ POST /api/V1/allDataSetsFromCSV/?file
 
 
 
-
-
-
 Test data in csv format and sample REST commands are available inside sample data folder
 
 

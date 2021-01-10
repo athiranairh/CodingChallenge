@@ -1,4 +1,4 @@
-package com.rbc.application.stock.market.application.models;
+package com.rbc.stock.market.application.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.rbc.application.stock.market.application;
+package com.rbc.stock.market.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

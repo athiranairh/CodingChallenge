@@ -1,4 +1,4 @@
-package com.rbc.application.stock.market.application.utils;
+package com.rbc.stock.market.application.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.rbc.application.stock.market.application.models.DataSet;
+import com.rbc.stock.market.application.models.DataSet;
 
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVFormat;
@@ -23,12 +23,14 @@ import org.apache.commons.csv.CSVRecord;
  */
 public class CommonUtil {
 
-	public static String TYPE = "text/csv";
+	public static String TYPE = "text/csv"; //expected file format
+	/* headers in the CSV file */
 	static String[] HEADERS = { "Id","quarter", "stock", "date", "open", "high", "low", "close", "volume",
 			"percent_change_price", "percent_chagne_volume_over_last_week", "previous_weeks_volume", "next_weeks_open",
 			"next_weeks_close", "percent_change_next_weeks_price", "days_to_next_dividend",
 			"percent_return_next_dividend" };
 
+	/* validating if the received file's type is CSV */
 	public static boolean hasCsvFormat(MultipartFile file) {
 		if (!TYPE.equals(file.getContentType())) {
 			return false;
@@ -37,15 +39,16 @@ public class CommonUtil {
 		}
 	}
 
+	/* converting CSV file data to data set object */
 	public static List<DataSet> csvToDataSet(InputStream is) {
+		/* reading file data */
 		try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+				/* defining parser to parse data, ignoring header fields in the CSV */
 				CSVParser csvParser = new CSVParser(fileReader,
 						CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());) {
-
 			List<DataSet> dataSets = new ArrayList<DataSet>();
-
 			Iterable<CSVRecord> csvRecords = csvParser.getRecords();
-			
+			/* parsing fields and mapping to dataSet object */
 			for (CSVRecord csvRecord : csvRecords) {
 				DataSet dataSet = new DataSet(Long.parseLong(csvRecord.get("Id")), Integer.parseInt(csvRecord.get("quarter")),
 						csvRecord.get("stock"), csvRecord.get("date"), csvRecord.get("open"), csvRecord.get("high"),
@@ -56,7 +59,6 @@ public class CommonUtil {
 						Integer.parseInt(csvRecord.get("days_to_next_dividend")), Integer.parseInt(csvRecord.get("percent_return_next_dividend")));
 				dataSets.add(dataSet);
 			}
-
 			return dataSets;
 		} catch (IOException e) {
 			throw new RuntimeException("fail to parse CSV file: " + e.getMessage());

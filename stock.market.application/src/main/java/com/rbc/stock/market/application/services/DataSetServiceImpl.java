@@ -1,4 +1,4 @@
-package com.rbc.application.stock.market.application.services;
+package com.rbc.stock.market.application.services;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.rbc.application.stock.market.application.models.DataSet;
-import com.rbc.application.stock.market.application.repositories.DataSetRepository;
-import com.rbc.application.stock.market.application.utils.CommonUtil;
+import com.rbc.stock.market.application.models.DataSet;
+import com.rbc.stock.market.application.repositories.DataSetRepository;
+import com.rbc.stock.market.application.utils.CommonUtil;
 
 @Service
 public class DataSetServiceImpl implements DataSetService {
@@ -19,7 +19,7 @@ public class DataSetServiceImpl implements DataSetService {
 	@Autowired
 	private DataSetRepository repository;
 	
-	/* All methods makes use of the CRUD repository or JpaSpecificationExecutor supplied methods
+	/* All methods make use of the CRUD repository or JpaSpecificationExecutor supplied methods
 	 * 
 	 * save, saveAll, findAll, findById
 	 * 

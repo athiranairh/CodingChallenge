@@ -1,4 +1,4 @@
-package com.rbc.application.stock.market.application.response;
+package com.rbc.stock.market.application.response;
 
 public class ResponseMessage {
 	private String message;
