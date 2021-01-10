@@ -1,10 +1,10 @@
 Steps to follow:
 
-Clone this repo
+1. Clone this repo
 
 
 
-Create postgres SQL database and schema and update application.proerties with corresponding entries
+2. Create postgres SQL database and schema and update application.proerties with corresponding entries
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
 spring.datasource.username=postgres
@@ -12,7 +12,7 @@ spring.datasource.password=admin
 
 spring.datasource.hikari.schema=stockmarket
 
-Build and run the app using -
+3. Build and run the app using -
 
 mvn spring-boot:run
 
