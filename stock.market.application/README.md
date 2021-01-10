@@ -10,7 +10,9 @@ git clone https://github.com/athiranairh/CodingChallenge.git
 2. Create postgres SQL database and schema and update application.proerties with corresponding entries
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+
 spring.datasource.username=postgres
+
 spring.datasource.password=admin
 
 spring.datasource.hikari.schema=stockmarket
