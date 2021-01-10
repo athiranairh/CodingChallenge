@@ -8,6 +8,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.rbc.application.stock.market.application.models.DataSet;
 
+
+/**
+ * @author athira nair
+ * 
+ *
+ */
 @Service
 public interface DataSetService {
 	

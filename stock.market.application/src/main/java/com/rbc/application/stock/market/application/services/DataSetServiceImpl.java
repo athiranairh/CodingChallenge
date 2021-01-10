@@ -18,6 +18,13 @@ public class DataSetServiceImpl implements DataSetService {
 
 	@Autowired
 	private DataSetRepository repository;
+	
+	/* All methods makes use of the CRUD repository or JpaSpecificationExecutor supplied methods
+	 * 
+	 * save, saveAll, findAll, findById
+	 * 
+	 * 
+	 * */ 
 
 	@Override
 	public DataSet getDataSets(Long id) {

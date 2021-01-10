@@ -15,6 +15,12 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
+/**
+ * @author athira nair
+ * 
+ * Utility class to provide some CSV handling methods
+ *
+ */
 public class CommonUtil {
 
 	public static String TYPE = "text/csv";
